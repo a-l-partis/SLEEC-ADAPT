@@ -1,5 +1,5 @@
 <h1>SLEEC-ADAPT</h1>
-### Instructions to Install the Eclipse-Based Version of SLEEC-ADAPT
+### Instructions to Install the Eclipse-Based Java 21 Version of SLEEC-ADAPT
 
 ### Development platform requirements ###
 
@@ -41,5 +41,6 @@ If you wish to change the files used as input, add your files to the inputFiles 
 ### Creating Input Files ###
 
 <h1>E-Commerce Chatbot</h1>
+
 
 
