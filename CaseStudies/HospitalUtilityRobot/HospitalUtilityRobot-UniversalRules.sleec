@@ -1,0 +1,8 @@
+def_start
+	event AssessRoomEnd
+	event DisplayCleaningPlan
+
+def_end
+rule_start
+	Rule1 when AssessRoomEnd then DisplayCleaningPlan
+rule_end
