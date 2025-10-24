@@ -15,7 +15,7 @@ Instructions to Install the Eclipse-Based Java 21 Version of SLEEC-ADAPT
 
 * Open eclipse marketplace and install xtext
 
-* Clone the AgentAdaption repository
+* Clone the SLEECADAPT repository
 
 * Select import, select the plugins and fragments wizard, and then import all components of this repository into the workspace
 
