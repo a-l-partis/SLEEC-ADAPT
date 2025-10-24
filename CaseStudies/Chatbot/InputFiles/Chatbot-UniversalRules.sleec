@@ -5,9 +5,11 @@ def_start
 	event WarnNotToProvidePersonalInfo
 	event ExplainCantReturnEnd
 	event ExplainLegalRights
+	event WarnNotToProvidePersonalInfo
 	measure personalInfo : boolean
 def_end
 rule_start
 	Rule1 when ReadResponseEnd and personalInfo then RedactInformation
+	Rule1 when ReadResponseEnd and personalInfo then WarnNotToProvidePersonalInfo
 	Rule2 when ExplainCantReturnEnd then ExplainLegalRights
 rule_end
