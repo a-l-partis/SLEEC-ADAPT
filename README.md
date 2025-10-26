@@ -43,7 +43,7 @@ AdaptionUnitTest.java in agentAdaptionCode/src/agentAdaptionCode implements the 
 
 Find the scalability data collector in agentAdaptionCode/src/Scalability.java. Workflow files consisting of up to 5000 tasks are included, with large sleec files included. Should you want to run with larger workflows, find the LargeWorkflowGenerator.py located in this repository under Scalability/InputGenerators. The x variable on line 135 and line 103 is used to iterate over the workflows: change the limits from 5000 to the new limit.
 
-To run, check either ExperimentSLEECRules() or ExperimentDefeaterRules() is called in the main function of the Scalability class, and run Scalability.java. Data will be stored in the scalability/csvFiles, as .csv files.
+To run, check either ExperimentSLEECRules() or ExperimentDefeaterRules() is called in the main function of the Scalability class, and run Scalability.java. Data will be stored in scalability/csvFiles, as .csv files.
 
 ### Creating Input Files ###
 
