@@ -11,7 +11,7 @@ Instructions to Install the Eclipse-Based Java 21 Version of SLEEC-ADAPT
 
 ### Setup ###
 
-* Download eclipse 2025-09 and create a workspace.
+* Download the eclipse modelling framework 2025-09 and create a workspace.
 
 * Open eclipse marketplace and install xtext
 
