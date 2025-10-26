@@ -11,13 +11,13 @@ Instructions to Install the Eclipse-Based Java 21 Version of SLEEC-ADAPT
 
 ### Setup ###
 
-* Download eclipse 2025-09 and create a workspace.
+* Download the eclipse modelling framework 2025-09 and create a workspace.
 
 * Open eclipse marketplace and install xtext
 
 * Clone the SLEECADAPT repository
 
-* Select import, select the plugins and fragments wizard, and then import all components of this repository into the workspace
+* Select import, select the plugins and fragments wizard, and then import all components of the AgentAdaption directory into the workspace
 
 * Find the pre-existing SLEEC-TK Repository at https://github.com/UoY-RoboStar/SLEEC-TK and clone the branch fix-mvn-build
 
