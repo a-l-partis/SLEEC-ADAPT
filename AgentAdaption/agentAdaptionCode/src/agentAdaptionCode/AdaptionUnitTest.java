@@ -1,18 +1,17 @@
-package uoy.isa.agentadaption.usingcode;
+package agentAdaptionCode;
 import static org.junit.Assert.*;
 import org.junit.Test;
-import org.xtext.example.workflow.WorkflowStandaloneSetup;
+import agent.adaption.xtext.workflow.*;
 
 import circus.robocalc.sleec.SLEECStandaloneSetup;
 import circus.robocalc.sleec.sLEEC.SLEECFactory;
-import uoy.isa.agentadaption.workflowAdaptor.WWorkflow;
 import workflowspec.WorkflowStructure;
 import workflowspec.WorkflowspecFactory;
 import workflowspec.WorkflowspecPackage;
 
 public class AdaptionUnitTest {
 	
-	public boolean save = true;
+	public boolean save = false;
 	
 	@Test
 	public void test_task_start_end() {

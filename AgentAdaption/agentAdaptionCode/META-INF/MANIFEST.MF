@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.swt,
  agent.adaption.xtext.workflow;bundle-version="1.0.0",
  org.eclipse.emf;bundle-version="2.9.0",
  org.eclipse.xtext;bundle-version="2.40.0",
- org.junit;bundle-version="4.13.2"
+ org.junit;bundle-version="4.13.2",
+ circus.robocalc.sleec
 Automatic-Module-Name: agentAdaptionCode
 Bundle-RequiredExecutionEnvironment: JavaSE-21

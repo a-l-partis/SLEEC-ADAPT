@@ -8,40 +8,20 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
-import java.util.Map;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.xtext.resource.XtextResourceSet;
+
 import agent.adaption.xtext.workflow.WorkflowStandaloneSetup;
 import circus.robocalc.sleec.SLEECStandaloneSetup;
-import circus.robocalc.sleec.sLEEC.Defblock;
-import circus.robocalc.sleec.sLEEC.Definition;
-import circus.robocalc.sleec.sLEEC.Event;
-import circus.robocalc.sleec.sLEEC.MBoolExpr;
-import circus.robocalc.sleec.sLEEC.Measure;
 import circus.robocalc.sleec.sLEEC.RuleBlock;
 import circus.robocalc.sleec.sLEEC.SLEECFactory;
-import circus.robocalc.sleec.sLEEC.SLEECPackage;
 import circus.robocalc.sleec.sLEEC.Specification;
-import agentAdaptionCode.Adaptor;
-import agentAdaptionCode.Rule;
-import agentAdaptionCode.WDecision;
-import agentAdaptionCode.WGuardedWorkflow;
-import agentAdaptionCode.WLoop;
-import agentAdaptionCode.WSequence;
-import agentAdaptionCode.WTask;
-import agentAdaptionCode.WWorkflow;
 import workflowspec.Decision;
 import workflowspec.GuardedWorkflow;
 import workflowspec.Loop;
+import workflowspec.MBoolExpr;
 import workflowspec.Sequence;
 import workflowspec.Task;
 import workflowspec.Workflow;
@@ -52,8 +32,7 @@ import workflowspec.WorkflowspecPackage;
 public class Implementation {
 
 	public static void main(String[] args) {
-		runAlgorithm("inputFiles/caseStudy/Chatbot.workflowspec","inputFiles/caseStudy/UniversalChatbotRules.sleec","ChatbotTest",true);
-		System.out.println("done");
+		runAlgorithm("inputFiles/caseStudy/Chatbot.workflowspec","inputFiles/caseStudy/Chatbot-UniversalRules.sleec","output",true);
 	}
 	
 public static WWorkflow runAlgorithm(String workflowPath, String sleecPath,String outputName,boolean save) {
@@ -79,7 +58,10 @@ public static WWorkflow runAlgorithm(String workflowPath, String sleecPath,Strin
 	WWorkflow result = Adaptor.AdaptWorkflow(toAdapt,ruleset);
 
 	toOutputWorkflow(result,outputName,save);
-
+	
+	if(save) {
+		System.out.println("output workflow in: outputworkflows/" + outputName + ".workflowspec");
+	}
 	return result;
 }
 	
@@ -307,10 +289,10 @@ public static Specification SLEECparser(String sleecFilePath) {
 	public static agentAdaptionCode.Defeater buildSLEECDefeater(circus.robocalc.sleec.sLEEC.Defeater defeater){
 		try {
 			String response = defeater.getResponse().getConstraint().getEvent().getName();
-			MBoolExpr guard = defeater.getExpr();
+			circus.robocalc.sleec.sLEEC.MBoolExpr guard = defeater.getExpr();
 			return new agentAdaptionCode.Defeater(guard,response);
 		} catch (NullPointerException e) {
-			MBoolExpr guard = defeater.getExpr();
+			circus.robocalc.sleec.sLEEC.MBoolExpr guard = defeater.getExpr();
 			return new agentAdaptionCode.Defeater(guard, null);
 		}
 	}
