@@ -38,6 +38,10 @@ If you wish to change the files used as input, add your files to the inputFiles 
 
 ### Running Scalability Analysis and Unit Tests
 
+AdaptionUnitTest.java in agentAdaptionCode/src/agentAdaptionCode implements the unit tests for SLEEC-ADAPT. The test files are pre-installed in the repository and will be loaded when AdaptionUnitTest is run.
+
+Find the scalability analysis as 
+
 ### Creating Input Files ###
 
 <h1>E-Commerce Chatbot</h1>
