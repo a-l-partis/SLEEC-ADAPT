@@ -58,7 +58,7 @@ See the documentation of your chosen SLEEC tool to access the validation functio
 
 The E-Commerce Chatbot serves as a demonstration platform for the applicability and portability of the SLEEC-ADAPT component. This proof-of-concept conversational assistant enhances customer experience on online shopping platforms by dynamically adapting its workflow and decision logic based on contextual or client-specific SLEEC rules. Built with the [Rasa Open Source](https://rasa.com) framework, it demonstrates how conversational agents can modify their behaviour in real time — as instructed by SLEEC-ADAPT — to meet diverse user requirements and operational contexts.
 
-# 🤖 Rasa Installation Guide (Linux & macOS)
+## 🤖 Rasa Installation Guide (Linux & macOS)
 
 This guide explains how to install [**Rasa Open Source**](https://legacy-docs-oss.rasa.com/docs/rasa/installation/environment-set-up) on **Linux** or **macOS**. It also covers common system dependencies and troubleshooting tips. 
 
