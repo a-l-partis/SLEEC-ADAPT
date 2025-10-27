@@ -47,7 +47,7 @@ public interface WorkflowspecPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "uoy.isa.adaption.workflowmodel.workflowspec";
+	String eNS_PREFIX = "agent.adaption.xtext.workflow.workflowspec";
 
 	/**
 	 * The singleton instance of the package.
