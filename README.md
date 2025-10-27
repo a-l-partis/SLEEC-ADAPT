@@ -56,5 +56,251 @@ See the documentation of your chosen SLEEC tool to access the validation functio
 
 <h1>E-Commerce Chatbot</h1>
 
+The E-Commerce Chatbot serves as a demonstration platform for the applicability and portability of the SLEEC-ADAPT component. This proof-of-concept conversational assistant enhances customer experience on online shopping platforms by dynamically adapting its workflow and decision logic based on contextual or client-specific SLEEC rules. Built with the [Rasa Open Source](https://rasa.com) framework, it demonstrates how conversational agents can modify their behaviour in real time — as instructed by SLEEC-ADAPT — to meet diverse user requirements and operational contexts.
 
+# 🤖 Rasa Installation Guide (Linux & macOS)
 
+This guide explains how to install [**Rasa Open Source**](https://legacy-docs-oss.rasa.com/docs/rasa/installation/environment-set-up) on **Linux** or **macOS** using a Python virtual environment. It also covers common system dependencies and troubleshooting tips. 
+
+## 📋 Prerequisites
+
+Before you start, make sure your system has:
+
+- **Python 3.7 – 3.9** 
+- **pip** (Python package manager)
+- optional: **venv** (for creating virtual environments)
+
+Check your versions:
+```
+python3 --version
+pip3 --version
+```
+## 🐧 Linux Setup (Ubuntu/Debian)
+
+### 1️⃣ Install Python and basic tools
+
+```
+sudo apt update
+sudo apt install -y python3 python3-pip python3-venv
+```
+
+### 2️⃣ Create and activate a virtual environment
+
+This step is optional but highly recommended. Using a virtual environment helps isolate your project dependencies and prevents conflicts with system-wide Python packages or different Python versions.
+
+```
+python3 -m venv ./venv
+source ./venv/bin/activate
+```
+
+### 3️⃣ Install Rasa
+
+```
+pip install -U pip
+pip install rasa
+```
+
+Verify the installation: 
+
+```
+rasa --version
+```
+
+You should see output like:
+
+```
+Rasa Version      :         3.6.21
+Minimum Compatible Version: 3.6.21
+Rasa SDK Version  :         3.6.2
+Python Version    :         3.8.10
+Operating System  :         Linux-5.15.0-126-generic-x86_64-with-glibc2.29
+Python Path       :         /.../venv/bin/python3
+```
+
+### 4️⃣ Install build dependencies
+
+In case of errors during the Rasa installation, install the required dependencies as prompted.
+
+For example, some Rasa packages (e.g., confluent-kafka) need system libraries: 
+
+```
+sudo apt install -y build-essential python3-dev libffi-dev libssl-dev librdkafka-dev
+```
+
+Upgrade pip, setuptools, and wheel (fixes the "invalid command 'bdist_wheel'" error):
+
+```
+pip install --upgrade pip setuptools wheel
+```
+
+Then reinstall Rasa as instructed above, and verify the installation.
+
+## 🍎 macOS Setup
+
+### 1️⃣ Install Homebrew (if not installed)
+
+Follow the instuctions found in this [link](https://docs.brew.sh/Installation).
+
+### 2️⃣ Install Python
+
+```
+brew update
+brew install python
+```
+### 2️⃣ Create and activate a virtual environment
+
+This step is optional but highly recommended. Using a virtual environment helps isolate your project dependencies and prevents conflicts with system-wide Python packages or different Python versions.
+
+```
+python3 -m venv ./venv
+source ./venv/bin/activate
+```
+### 3️⃣ Install Rasa
+
+```
+pip install -U pip
+pip install rasa
+```
+
+Verify the installation: 
+
+```
+rasa --version
+```
+
+You should see output like:
+
+```
+Rasa Version      :         3.6.21
+Minimum Compatible Version: 3.6.21
+Rasa SDK Version  :         3.6.2
+Python Version    :         3.9.22
+Operating System  :         macOS-15.5-arm64-arm-64bit
+Python Path       :         /.../venv/bin/python3.9
+```
+
+### 4️⃣ Install build dependencies
+
+As instructed in the Linux installation guide, if there are errors during the Rasa installation, install the required dependencies as prompted.
+
+For example:
+
+```
+brew install python openssl librdkafka
+pip3 install --upgrade pip setuptools wheel
+```
+
+## 🚀 Running the E-Commerce Chatbot with SLEEC-ADAPT
+
+Once Rasa and all dependencies are installed, you can run the adaptive chatbot and interact with it as different clients.
+The setup consists of two main components:
+- Chatbot Server — runs the Rasa action server and manages workflow adaptation through SLEEC-ADAPT, and can be found inside the [server folder](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/).
+- Client Scripts — represent users with their own ```.sleec``` rule files that personalise the chatbot behaviour, and can be found inside the [clients folder](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/).
+
+### ⚙️ Environment Configuration
+
+Before running the server or client scripts, make sure your Python virtual environment is correctly set up and activated.
+
+By default, both the server and client scripts are configured to use a specific virtual environment path. If your environment uses a different location or if you’re not using a virtual environment
+you’ll need to update or comment out those lines.
+
+Before starting the chatbot, confirm that Rasa is available in your current shell:
+
+```which rasa```
+
+You should see the full path to your rasa binary, for example:
+
+```/home/username/venv/bin/rasa```
+
+### Check your virtual environment path
+
+In the [```chatbot_server.py```](./CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/chatbot_server.py) script, near the top, you will find: 
+
+```RASA_BIN = "PATH TO RASA EXECUTABLE, e.g.: home/~/venv/bin/rasa"```
+
+Update this path to match your environment. For example:
+
+```RASA_BIN = "/home/username/venv/bin/rasa"```
+
+Or, if you’re not using a virtual environment, you can simply comment it out and rely on your system-wide Rasa installation:
+
+```# RASA_BIN = "PATH TO RASA EXECUTABLE, e.g.: home/~/venv/bin/rasa"```
+
+``` RASA_BIN = "rasa"```
+
+### Update the client scripts
+
+Each client script (i.e., [client 1](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/client1/client_chat.sh), [client 2](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/client2/client_chat.sh), and [client 3](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/client3/client_chat.sh)) begins with:
+
+```source "$HOME/virtualenvs/rasa_env/bin/activate"```
+
+If your virtual environment is stored elsewhere, update the path accordingly. If you’re not using a virtual environment, comment this line out.
+
+## 🔧 Start the Chatbot Server
+
+Open a new terminal inside the [server folder](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/) and launch the main server:
+
+```python chatbot_server.py```
+
+If there are no errors, you should see output similar to:
+
+```
+============================================================
+🤖  ADAPTIVE CHATBOT SERVER INITIALIZED
+============================================================
+📁 Project root detected ✅
+🚀 Starting Rasa action server in background...
+⏳ Waiting for action server on localhost:5055... ✅ Ready.
+🔄 Loading workflow
+✅ Found common SLEEC rules
+🧠 Workflow adapted
+📡 Waiting for client conversations...
+```
+
+The server:
+- Loads the base workflow and common (universal) SLEEC rules
+- Generates an adapted ```active.workflowspec``` workflow
+- Waits for client connections 
+
+## 💬 Launch a Client Chat Session
+
+Each client has its own folder inside the project (for example:
+rasa_decision_support/clients/client1, client2, etc.).
+
+To start chatting as a specific client, open a new terminal at the client's folder or navigate to that folder, e.g.: 
+```cd rasa_decision_support/clients/client1```
+
+Once inside the client's folder, run the client's script ```bash chat_client.sh```
+
+You’ll see something like:
+
+```
+📥 Connection requested at 14:32:10
+
+👤 Connected 'client1'
+ℹ️  No SLEEC rules found for 'client1'.
+```
+
+If the client folder contains a ```.sleec``` file the chatbot server will automatically apply those rules:
+
+```
+📥 Connection requested at 14:34:25
+
+👤 Connected 'client2'
+✅ Found 'client2' SLEEC rules
+🧠 Workflow adapted for 'client2'
+```
+
+#### Adaptation logic
+
+- Client without rules → Chatbot uses the base workflow
+- Client with rules → Chatbot dynamically applies the user’s ```.sleec``` rules to the workflow
+
+## 🧩 Further Experimentation
+
+By starting the chatbot server and the three client scripts, you can reproduce the baseline scenario illustrated in Figure 4 of the paper.
+
+Beyond recreating the reference setup, users are encouraged to explore new scenarios and test the adaptability of SLEEC-ADAPT. You can add multiple ```.sleec``` rule files inside a client’s folder and observe how the chatbot’s workflow dynamically changes.
+
+Additionally, the [```actions.py```](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/actions/actions.py) script — located inside the [actions](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/actions/) folder — defines the main functionality of the chatbot. You can modify existing behaviours (for example, changing product returns to be automatically accepted by editing line 145:
+```"canReturn": False → True```) or even implement entirely new conversational actions and logic.
