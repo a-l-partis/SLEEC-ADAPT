@@ -7,11 +7,10 @@ import socket
 import shutil
 
 # === Configuration ===
-RASA_BIN = "Set path to rasa executable, e.g.: ~/virtualenvs/rasa_env/bin/rasa"
+RASA_BIN = "PATH TO RASA EXECUTABLE, e.g.: home/~/venv/bin/rasa"
 WORKFLOWS_FILENAME = "active.workflowspec"
 ADAPT_DIR_NAME = "sleec-adapt"
 WORKFLOW_BASE_DIR = "workflows/workflow_base"
-JAR_PATH = os.path.join(ADAPT_DIR_NAME, "agent-adaption.jar")
 
 # === UI Header ===
 print("\033]0;🔧 Chatbot Server\007")
@@ -196,13 +195,13 @@ try:
                                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                     else:
                         res_base = subprocess.run(
-                            ["java", "-jar", JAR_PATH, base_input, base_rule, base_output],
+                            ["java", "-jar", "agent-adaption.jar", base_input, base_rule, base_output],
                             cwd=ADAPT_DIR, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                         )
 
                     produced_base = os.path.join(ADAPT_DIR, f"{base_output}.workflowspec")
                     if res_base.returncode != 0 or not os.path.exists(produced_base):
-                        print(f"❌ Could not create base for '{client_name}' (Chatbot + universal)")
+                        print(f"❌ Could not create base for '{client_name}'")
                         # do NOT overwrite the active; keep current one
                         # optionally: continue to next loop iteration
                         continue
@@ -224,7 +223,7 @@ try:
                                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                         else:
                             res_rule = subprocess.run(
-                                ["java", "-jar", JAR_PATH, current_input, rule, out_stem],
+                                ["java", "-jar", "agent-adaption.jar", current_input, rule, out_stem],
                                 cwd=ADAPT_DIR, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                             )
 
@@ -272,7 +271,7 @@ try:
                                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                     else:
                         res = subprocess.run(
-                            ["java", "-jar", JAR_PATH, "Chatbot.workflowspec", "universal_rules.sleec", "active"],
+                            ["java", "-jar", "agent-adaption.jar", "Chatbot.workflowspec", "universal_rules.sleec", "active"],
                             cwd=ADAPT_DIR, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
                         )
 
