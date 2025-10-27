@@ -1,7 +1,21 @@
+<h1>SLEEC-ADAPT Executable</h1>
+
+### Requirements ###
+
+* Java 11
+
+### Setup and Running ###
+
+Download the agent-adaption.jar release from this repository. Place it in the same directory as the files you wish to use as input. To run, open the terminal, navigate to the containing directory, then run the command:
+`java -jar agent-adaption.jar /&ltYour Workflow/%gt.workflowspec /&ltYour SLEEC file/&gt.sleec "/&ltYourOutputFileName/&gt"
+
+The adapted workflow file will be created in the same directory under the file name /&ltYourOutputFileName/&gt
+
 <h1>SLEEC-ADAPT</h1>
+
 Instructions to Install the Eclipse-Based Java 21 Version of SLEEC-ADAPT
 
-### Development platform requirements ###
+### Development Platform Requirements ###
 
 * Java 21
 * Eclipse 2025-09
