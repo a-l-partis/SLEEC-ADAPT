@@ -147,7 +147,7 @@ Then reinstall Rasa as instructed above, and verify the installation.
 
 ### 1️⃣ Install Homebrew (if not installed)
 
-Follow the instuctions found in this [link](https://docs.brew.sh/Installation).
+Follow the instructions found in this [link](https://docs.brew.sh/Installation).
 
 ### 2️⃣ Install Python
 
