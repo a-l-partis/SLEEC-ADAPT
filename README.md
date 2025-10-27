@@ -60,7 +60,7 @@ The E-Commerce Chatbot serves as a demonstration platform for the applicability 
 
 # 🤖 Rasa Installation Guide (Linux & macOS)
 
-This guide explains how to install [**Rasa Open Source**](https://legacy-docs-oss.rasa.com/docs/rasa/installation/environment-set-up) on **Linux** or **macOS** using a Python virtual environment. It also covers common system dependencies and troubleshooting tips. 
+This guide explains how to install [**Rasa Open Source**](https://legacy-docs-oss.rasa.com/docs/rasa/installation/environment-set-up) on **Linux** or **macOS**. It also covers common system dependencies and troubleshooting tips. 
 
 ## 📋 Prerequisites
 
@@ -81,8 +81,10 @@ pip3 --version
 
 ```
 sudo apt update
-sudo apt install -y python3 python3-pip python3-venv
+sudo apt install -y python3.X python3.X-pip python3.X-venv python3.X-dev
 ```
+
+where ```3.X``` refers to the python version, e.g., ```3.8``` or ```3.9```
 
 ### 2️⃣ Create and activate a virtual environment
 
@@ -92,6 +94,8 @@ This step is optional but highly recommended. Using a virtual environment helps 
 python3 -m venv ./venv
 source ./venv/bin/activate
 ```
+
+If you have multiple python versions installed, use the one appropriate for the above command, e.g., ```python3.9 -m venv ./venv```
 
 ### 3️⃣ Install Rasa
 
@@ -124,7 +128,7 @@ In case of errors during the Rasa installation, install the required dependencie
 For example, some Rasa packages (e.g., confluent-kafka) need system libraries: 
 
 ```
-sudo apt install -y build-essential python3-dev libffi-dev libssl-dev librdkafka-dev
+sudo apt install -y build-essential libffi-dev libssl-dev librdkafka-dev
 ```
 
 Upgrade pip, setuptools, and wheel (fixes the "invalid command 'bdist_wheel'" error):
@@ -145,8 +149,11 @@ Follow the instuctions found in this [link](https://docs.brew.sh/Installation).
 
 ```
 brew update
-brew install python
+brew install python@3.X
 ```
+
+where ```3.X``` refers to the python version, e.g., ```3.8``` or ```3.9```
+
 ### 2️⃣ Create and activate a virtual environment
 
 This step is optional but highly recommended. Using a virtual environment helps isolate your project dependencies and prevents conflicts with system-wide Python packages or different Python versions.
@@ -155,6 +162,9 @@ This step is optional but highly recommended. Using a virtual environment helps 
 python3 -m venv ./venv
 source ./venv/bin/activate
 ```
+
+If you have multiple python versions installed, use the one appropriate for the above command, e.g., ```python3.9 -m venv ./venv```
+
 ### 3️⃣ Install Rasa
 
 ```
