@@ -7,7 +7,8 @@
 ### Setup and Running ###
 
 Download the agent-adaption.jar release from this repository. Place it in the same directory as the files you wish to use as input. To run, open the terminal, navigate to the containing directory, then run the command:
-`java -jar agent-adaption.jar &lt;Your Workflow/>.workflowspec /<Your SLEEC file/>.sleec "/<YourOutputFileName/>"`
+
+`java -jar agent-adaption.jar &lt;Your Workflow&gt;.workflowspec /&lt;Your SLEEC file&gt;.sleec "&lt;YourOutputFileName&gt;"`
 
 The adapted workflow file will be created in the same directory under the file name /&ltYourOutputFileName/&gt
 
