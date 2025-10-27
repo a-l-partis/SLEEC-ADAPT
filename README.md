@@ -10,7 +10,7 @@ Download the agent-adaption.jar release from this repository. Place it in the sa
 
 `java -jar agent-adaption.jar <Your Workflow>.workflowspec <Your SLEEC file>.sleec "<YourOutputFileName>"`
 
-The adapted workflow file will be created in the same directory under the file name &lt;YourOutputFileName&gt;
+The adapted workflow file will be created in the same directory under the file name &lt;YourOutputFileName&gt;.workflowspec
 
 <h1>SLEEC-ADAPT</h1>
 
