@@ -65,8 +65,13 @@ This guide explains how to install [**Rasa Open Source**](https://legacy-docs-os
 ## 📋 Prerequisites
 
 Before you start, make sure your system has:
-
-- **Python 3.7 – 3.9** 
+- **Java 11** (SLEEC-ADAPT executable requirement)
+    - Installation steps:
+        - ```curl -s "https://get.sdkman.io" | bash```
+        - ```source "$HOME/.sdkman/bin/sdkman-init.sh"```
+        - ```sdk install java 11.0.20-tem```
+- **Python 3.7 - 3.10** (Rasa requirement)
+    - This project has been tested and verified with Python 3.8 on Linux and Python 3.9 on macOS
 - **pip** (Python package manager)
 - optional: **venv** (for creating virtual environments)
 
@@ -75,7 +80,7 @@ Check your versions:
 python3 --version
 pip3 --version
 ```
-## 🐧 Linux Setup (Ubuntu/Debian)
+## 🐧 Linux Setup
 
 ### 1️⃣ Install Python and basic tools
 
