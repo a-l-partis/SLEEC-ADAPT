@@ -19,8 +19,8 @@ Instructions to Install the Eclipse-Based Java 21 Version of SLEEC-ADAPT
 
 * Select import, select the plugins and fragments wizard, and then import all components of the AgentAdaption directory into the workspace
 
-* Find the pre-existing SLEEC-TK Repository at https://github.com/UoY-RoboStar/SLEEC-TK and clone the branch fix-mvn-build
-git clone -b fix-mvn-build git@github.com:UoY-RoboStar/SLEEC-TK.git
+* Find the pre-existing SLEEC-TK Repository at https://github.com/UoY-RoboStar/SLEEC-TK and clone the branch fix-mvn-build:
+ `git clone -b fix-mvn-build git@github.com:UoY-RoboStar/SLEEC-TK.git`
 
 * Delete from sleec-core/circus.robocalc.sleec.tests/src/circus/robocalc/sleec/tests/ the file CSPGenerationTest.xtend
 
