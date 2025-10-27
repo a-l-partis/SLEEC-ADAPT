@@ -312,7 +312,7 @@ If the client folder contains a ```.sleec``` file the chatbot server will automa
 
 ## 🧩 Further Experimentation
 
-By starting the chatbot server and the three client scripts, you can reproduce the baseline scenario illustrated in Figure 4 of the paper.
+By starting the chatbot server and the three client scripts, you can reproduce the baseline scenario illustrated in Figure 5 of the paper.
 
 Beyond recreating the reference setup, users are encouraged to explore new scenarios and test the adaptability of SLEEC-ADAPT. You can add multiple ```.sleec``` rule files inside a client’s folder and observe how the chatbot’s workflow dynamically changes.
 
