@@ -1,1 +1,1 @@
-[Chatbot-InitialWorkflow.pdf](https://github.com/user-attachments/files/23184103/Chatbot-InitialWorkflow.pdf)
+<img width="2162" height="2867" alt="Chatbot-InitialWorkflow-2-1" src="https://github.com/user-attachments/assets/1c27db6f-23cc-40ff-a924-c9f80a17c24e" />
