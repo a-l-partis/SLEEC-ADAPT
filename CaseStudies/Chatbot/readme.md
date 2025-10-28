@@ -3,3 +3,6 @@
 
 <h1>SLEEC Rules</h1>
 <img width="544" height="335" alt="image" src="https://github.com/user-attachments/assets/5418f2b5-7ff9-47bf-a1a9-3263c5a579e5" />
+
+<h1> Workflow Adapted Using Common Rules and Anxious User's Rules</h1>
+
