@@ -310,6 +310,8 @@ If the client folder contains a ```.sleec``` file the chatbot server will automa
 - Client without rules → Chatbot uses the base workflow
 - Client with rules → Chatbot dynamically applies the user’s ```.sleec``` rules to the workflow
 
+**Note that before starting a new client conversation, you will need to terminate the current conversation (i.e., ``` Ctrl + C```)** 
+
 ## 🧩 Further Experimentation
 
 By starting the chatbot server and the three client scripts, you can reproduce the baseline scenario illustrated in Figure 5 of the paper.
