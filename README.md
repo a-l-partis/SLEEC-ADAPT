@@ -269,7 +269,7 @@ If your virtual environment is stored elsewhere, update the path accordingly. If
 
 Open a new terminal inside the (/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/) and launch the main server:
 
-```python chatbot_server.py```
+```python3 chatbot_server.py```
 
 If there are no errors, you should see output similar to:
 
