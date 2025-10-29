@@ -223,8 +223,8 @@ pip3 install --upgrade pip setuptools wheel
 
 Once Rasa and all dependencies are installed, you can run the adaptive chatbot and interact with it as different clients.
 The setup consists of two main components:
-- Chatbot Server — runs the Rasa action server and manages workflow adaptation through SLEEC-ADAPT, and can be found inside the [server folder](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/).
-- Client Scripts — represent users with their own ```.sleec``` rule files that personalise the chatbot behaviour, and can be found inside the [clients folder](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/).
+- Chatbot Server — runs the Rasa action server and manages workflow adaptation through SLEEC-ADAPT, and can be found inside the (/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/).
+- Client Scripts — represent users with their own ```.sleec``` rule files that personalise the chatbot behaviour, and can be found inside the (/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/).
 
 ### ⚙️ Environment Configuration
 
@@ -243,7 +243,7 @@ You should see the full path to your rasa binary, for example:
 
 ### Check your virtual environment path
 
-In the [```chatbot_server.py```](./CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/chatbot_server.py) script, near the top, you will find: 
+In the (./CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/chatbot_server.py) script, near the top, you will find: 
 
 ```RASA_BIN = "PATH TO RASA EXECUTABLE, e.g.: home/~/venv/bin/rasa"```
 
@@ -259,7 +259,7 @@ Or, if you’re not using a virtual environment, you can simply comment it out a
 
 ### Update the client scripts
 
-Each client script (i.e., [client 1](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/client1/client_chat.sh), [client 2](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/client2/client_chat.sh), and [client 3](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/client3/client_chat.sh)) begins with:
+Each client script (i.e., (/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/client1/client_chat.sh), (/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/client2/client_chat.sh), and (/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/clients/client3/client_chat.sh)) begins with:
 
 ```source "$HOME/virtualenvs/rasa_env/bin/activate"```
 
@@ -267,7 +267,7 @@ If your virtual environment is stored elsewhere, update the path accordingly. If
 
 ## 🔧 Start the Chatbot Server
 
-Open a new terminal inside the [server folder](/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/) and launch the main server:
+Open a new terminal inside the (/CaseStudies/Chatbot/ChatbotImplementation/rasa_decision_support/server/) and launch the main server:
 
 ```python chatbot_server.py```
 
@@ -299,7 +299,7 @@ rasa_decision_support/clients/client1, client2, etc.).
 To start chatting as a specific client, open a new terminal at the client's folder or navigate to that folder, e.g.: 
 ```cd rasa_decision_support/clients/client1```
 
-Once inside the client's folder, run the client's script ```bash chat_client.sh```
+Once inside the client's folder, run the client's script ```bash client_chat.sh```
 
 You’ll see something like:
 
