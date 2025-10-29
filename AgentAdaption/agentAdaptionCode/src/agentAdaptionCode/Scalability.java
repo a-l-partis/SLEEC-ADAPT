@@ -84,7 +84,7 @@ public class Scalability {
         
         System.out.println(runMultTimes(500,"scalability/workflows/scalability1.workflowspec","scalability/sleecRules/rulestest25.sleec"));
         //3
-        for(int defeaterNum = 3; defeaterNum <= 700; defeaterNum = 3*defeaterNum) {
+        for(int defeaterNum = 3; defeaterNum <= 10; defeaterNum = 3*defeaterNum) {
         	
         	
         	String sleecFile = "scalability/defeaterRules/defeaters" + defeaterNum + ".sleec";
@@ -100,7 +100,7 @@ public class Scalability {
     			Adaptor.AdaptWorkflow(toAdapt,ruleset);
     		}
 
-    		for(int x = 1; x < 5000; x++) {
+    		for(int x = 1; x < 1000; x++) {
 				String path = "scalability/workflows/scalability" + Integer.toString(x) + ".workflowspec";
 				Path formalPath = Paths.get(path);
 				
@@ -129,10 +129,10 @@ public class Scalability {
         ArrayList<String> times = new ArrayList<String>();
         
         System.out.println(runMultTimes(500,"scalability/workflows/scalability1.workflowspec","scalability/sleecRules/rulestest25.sleec"));
-        for(int SLEECNum = 25; SLEECNum < 15626; SLEECNum = 5* SLEECNum) {
+        for(int SLEECNum = 25; SLEECNum < 626; SLEECNum = 5* SLEECNum) {
         	
         	String sleecFile = "scalability/sleecRules/rulestest" + SLEECNum + ".sleec";
-			for(int x = 0; x < 5000; x++) {
+			for(int x = 0; x < 1000; x++) {
 				String path = "scalability/workflows/scalability" + Integer.toString(x) + ".workflowspec";
 				Path formalPath = Paths.get(path);
 				
