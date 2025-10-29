@@ -1,3 +1,6 @@
+<h1> Downloading The Anonymised Repository </h1>
+Downloading the anonymous repository may take a while - please be patient. If the download is failing, try a different browser.
+
 <h1>SLEEC-ADAPT Executable</h1>
 
 ### Requirements ###
