@@ -1,1 +1,1 @@
-!(RobotVacuum-AllAdaptions.png)
+![Robot Vacuum Adaptations](RobotVacuum-AllAdaptions.png)
