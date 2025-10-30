@@ -1,1 +1,1 @@
-![Robot Vacuum Adaptations](RobotVacuum-AllAdaptions.png)
+![Chatbot Adaptations](Chatbot-AllAdaptions.png)
