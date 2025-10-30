@@ -1,1 +1,1 @@
-![Chatbot Adaptations](Chatbot-AllAdaptions.png)
+![Chatbot Adaptations](Chatbot-AllAdaptations.png)
